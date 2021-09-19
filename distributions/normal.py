@@ -42,29 +42,61 @@ def normal_distribution():
     with st.expander('Formulae', expanded=False):
         st.markdown(formulae_text)
 
+    with st.expander('LaTeX', expanded=False):
+        st.markdown(latex_text)
+
 
 formulae_text = r'''Parameters:
 - mean: $\mu\in\mathbb{R}$
 - standard deviation: $\sigma\in\mathbb{R}^+$
-
+---
 Support:
 - $x\in\mathbb{R}$
-
+---
 Moments:
 - $\mathrm{E}(X) = \mu$
 - $\mathrm{Var}(X) = \sigma^2$
-
+---
 Probability density function (PDF):
 
 $$
 f(x|\mu,\sigma) = \frac{1}{\sqrt{2\pi\sigma^2}}\text{exp}\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
 $$
-
+---
 Cumulative distribution function (CDF):
 
 $$
 F(x|\mu,\sigma) = \frac{1}{2}\left[1+\text{erf}\left(\frac{x-\mu}{\sigma\sqrt{2}}\right)\right]
 $$
 
-where $\text{erf}(x) = \frac{2}{\sqrt{\pi}}\int_{0}^{x} e^{-t^2}\mathrm{d}t$ is the error function.
+where
+
+$$
+\text{erf}(x) = \frac{2}{\sqrt{\pi}}\int_{0}^{x} e^{-t^2}\mathrm{d}t
+$$
+is the error function.
+'''
+
+latex_text = r'''Moments:
+```latex
+\mathrm{E}(X) = \mu
+```
+```latex
+\mathrm{Var}(X) = \sigma^2
+```
+---
+Probability density function (PDF):
+```latex
+f(x|\mu,\sigma) = \frac{1}{\sqrt{2\pi\sigma^2}}\text{exp}\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
+```
+---
+Cumulative distribution function (CDF):
+```latex
+F(x|\mu,\sigma) = \frac{1}{2}\left[1+\text{erf}\left(\frac{x-\mu}{\sigma\sqrt{2}}\right)\right]
+```
+where
+```latex
+\text{erf}(x) = \frac{2}{\sqrt{\pi}}\int_{0}^{x} e^{-t^2}\mathrm{d}t
+```
+is the error function.
 '''
